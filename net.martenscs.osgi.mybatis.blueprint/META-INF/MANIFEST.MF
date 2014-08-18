@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Mybatis Blueprint
+Bundle-SymbolicName: net.martenscs.osgi.mybatis.blueprint
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Martenscs
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.apache.ibatis.logging;version="3.2.4",
+ org.apache.ibatis.mapping;version="3.2.4",
+ org.apache.ibatis.plugin;version="3.2.4",
+ org.apache.ibatis.reflection.factory;version="3.2.4",
+ org.apache.ibatis.reflection.wrapper;version="3.2.4",
+ org.apache.ibatis.session;version="3.2.4",
+ org.apache.ibatis.transaction;version="3.2.4",
+ org.apache.ibatis.transaction.jdbc;version="3.2.4",
+ org.apache.ibatis.type;version="3.2.4",
+ org.osgi.framework
+Export-Package: net.martenscs.osgi.mybatis.blueprint;version="1.0.0"

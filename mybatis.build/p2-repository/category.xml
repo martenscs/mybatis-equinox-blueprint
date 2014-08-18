@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/net.martenscs.osgi.mybatis_1.0.0.qualifier.jar" id="net.martenscs.osgi.mybatis" version="1.0.0.qualifier">
+      <category name="Mybatis Blueprint Testing"/>
+   </feature>
+   <category-def name="Mybatis Blueprint Testing" label="Mybatis Blueprint Testing"/>
+</site>

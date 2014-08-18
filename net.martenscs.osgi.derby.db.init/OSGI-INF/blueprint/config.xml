@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+	<reference id="datasource" interface="javax.sql.DataSource"
+		filter="(osgi.jndi.service.name=datasource/derbyDB)" />
+
+
+	<bean id="databaseInit" class="net.martenscs.osgi.derby.db.init.SampleDatabaseInit"
+		init-method="create" destroy-method="destroy">
+		<property name="datasource" ref="datasource" />
+	</bean>
+
+</blueprint>

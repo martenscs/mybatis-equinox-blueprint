@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+
+	<reference id="derbyDS" interface="javax.sql.DataSource" filter="(osgi.jndi.service.name=datasource/derbyDB)" />
+
+	<bean id="exampleInterceptor" class="net.martenscs.osgi.mybatis.blueprint.example.plugin.ExamplePlugin" />
+
+	<bean id="exampleTypeHandler" class="net.martenscs.osgi.mybatis.blueprint.example.typehandler.ExampleTypeHandler" />
+
+	<bean id="sampleObjFactory" class="net.martenscs.osgi.mybatis.blueprint.example.objfactory.ExampleObjectFactory">
+		<property name="sourceBundle" ref="blueprintBundle" />
+	</bean>
+
+	<bean id="sqlSessionFactory" class="net.martenscs.osgi.mybatis.blueprint.SqlSessionFactoryBean">
+		<property name="dataSource" ref="derbyDS" />
+		<property name="sourceBundle" ref="blueprintBundle" />
+		<property name="objectFactory" ref="sampleObjFactory" />
+		<property name="mappers">
+			<set>
+				<value>net.martenscs.osgi.mybatis.blueprint.example.mapper.CategoryMapper</value>
+			</set>
+		</property>
+		<property name="configurationProperties">
+			<props>
+				<prop key="cacheEnabled" value="false" />
+			</props>
+		</property>
+		<property name="typeHandlers">
+			<list>
+				<ref component-id="exampleTypeHandler" />
+			</list>
+		</property>
+		<property name="plugins">
+			<list>
+				<ref component-id="exampleInterceptor" />
+			</list>
+		</property>
+	</bean>
+	<bean id="databaseInit" class="net.martenscs.osgi.mybatis.blueprint.example.service.CategoryService" init-method="init">
+		<property name="factory" ref="sqlSessionFactory" />
+	</bean>
+
+</blueprint>
