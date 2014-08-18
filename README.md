@@ -21,7 +21,7 @@ a. build - the Tycho parent build project
 b. mybatis-equinox-blueprint - the containing project
 c. net.martenscs.osgi.derby.db.init - the project that contains the code for instantiating the DB
 d. net.martenscs.osgi.derby.ds - the datasource project
-e. net.martenscs.osgi.example.domain - the bussiness domain project
+e. net.martenscs.osgi.example.domain - the business domain project
 f. net.martenscs.osgi.mybatis - the eclipse feature for the project set
 g. net.martenscs.osgi.mybatis.blueprint - the project that contains the delegate for instantiating Mybatis with blueprint
 h. net.martenscs.osgi.mybatis.blueprint.example - the impl 
