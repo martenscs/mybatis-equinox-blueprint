@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde version="3.8"?>
 
-<target name="mybatis" sequenceNumber="6">
+<target name="mybatis" sequenceNumber="7">
 <locations>
-<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="slicer" includeSource="true" type="InstallableUnit">
-<unit id="org.equinox.osgi.runtime.feature.group" version="0.0.1.201403311556"/>
-<unit id="org.equinox.osgi.runtime.source.feature.group" version="0.0.1.201403311556"/>
-<repository location="http://p2.martenscs.net/equinox-runtime"/>
-</location>
 <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="karaf-framework-aries.feature.group" version="1.4.0"/>
 <unit id="karaf-framework-aries.source.feature.group" version="1.4.0"/>
@@ -20,6 +15,10 @@
 <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="slicer" includeSource="true" type="InstallableUnit">
 <unit id="org.apache.derby" version="10.8.2.2_v201211210650"/>
 <repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20140114142710/repository"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="slicer" includeSource="true" type="InstallableUnit">
+<unit id="org.equinox.osgi.runtime.feature.group" version="0.0.1.201409221907"/>
+<repository location="http://p2.martenscs.net/equinox-runtime"/>
 </location>
 </locations>
 </target>
